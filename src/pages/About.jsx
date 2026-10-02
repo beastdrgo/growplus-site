@@ -11,7 +11,7 @@ const team = [
     {
         name: "MOHAMMED AFZAL",
         role: "Head of Engineering / AI Architect",
-        image: "/team/myimage.png",
+        image: "/team/member2.png",
         bio: "Expert in autonomous agents and large-scale AI workflow integration."
     },
     {
