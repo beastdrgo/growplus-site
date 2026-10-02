@@ -179,7 +179,7 @@ export default function Reviews() {
                     <p className="text-lg text-gp-grey mb-16 max-w-xl mx-auto px-4">
                         Step into the future of elite business growth. Request your personalized automation audit and elevate your operations.
                     </p>
-                    <a href="https://wa.me/919901542387" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-green-400 to-primary group-hover:from-green-400 group-hover:to-primary hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200 shadow-[0_0_50px_rgba(92,184,50,0.3)] hover:shadow-[0_0_80px_rgba(92,184,50,0.5)] transition-shadow">
+                    <a href="https://wa.me/919686965553" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-green-400 to-primary group-hover:from-green-400 group-hover:to-primary hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200 shadow-[0_0_50px_rgba(92,184,50,0.3)] hover:shadow-[0_0_80px_rgba(92,184,50,0.5)] transition-shadow">
                         <span className="relative px-12 py-5 transition-all ease-in duration-75 bg-gp-black rounded-full group-hover:bg-opacity-0 font-heading font-bold uppercase tracking-widest text-xs">
                             Start Success Journey
                         </span>
