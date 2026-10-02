@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import { ArrowDown, ArrowUpRight } from "lucide-react"
-import { mediaUrl } from "@/utils/media"
 
 export default function Hero() {
     return (
@@ -29,9 +28,9 @@ export default function Hero() {
                         </motion.div>
                     </div>
 
-                    <motion.div initial={{opacity:0,x:30}} animate={{opacity:1,x:0}} transition={{duration:1,delay:.2}} className="relative h-[420px] md:h-[540px] lg:h-[620px] overflow-hidden bg-gp-black">
-                        <video autoPlay muted loop playsInline poster={mediaUrl("growplus/hero.mp4")} className="w-full h-full object-cover opacity-90">
-                            <source src={mediaUrl("growplus/hero.mp4")} type="video/mp4" />
+                    <motion.div initial={{opacity:0,x:30}} animate={{opacity:1,x:0}} transition={{duration:1,delay:.2}} className="relative w-full aspect-video overflow-hidden rounded-[2rem] bg-gp-black">
+                        <video autoPlay muted loop playsInline className="w-full h-full object-contain opacity-90">
+                            <source src="/growplus/hero.mp4" type="video/mp4" />
                         </video>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                         <div className="absolute left-6 bottom-6 right-6 flex justify-between items-end text-white">
