@@ -31,7 +31,7 @@ const localRoutes = [
 ]
 
 export default function App() {
-    const WHATSAPP_URL = "https://wa.me/919901542387"
+    const WHATSAPP_URL = "https://wa.me/919686965553"
     const isReactSnap = typeof navigator !== 'undefined' && navigator.userAgent.includes('ReactSnap')
     const [introFinished, setIntroFinished] = useState(isReactSnap)
 
