@@ -7,66 +7,91 @@ import { mediaUrl } from "@/utils/media"
 
 const featured = clients.slice(0, 12)
 
+function relativePosition(index, active, total) {
+    let diff = index - active
+    if (diff > total / 2) diff -= total
+    if (diff < -total / 2) diff += total
+    return diff
+}
+
 export default function BrandWorkCarousel({ onSelect }) {
     const [active, setActive] = React.useState(0)
     const activeClient = featured[active]
 
-    const next = React.useCallback(() => setActive((value) => (value + 1) % featured.length), [])
-    const prev = React.useCallback(() => setActive((value) => (value - 1 + featured.length) % featured.length), [])
-
-    React.useEffect(() => {
-        const timer = window.setInterval(next, 5000)
-        return () => window.clearInterval(timer)
-    }, [next])
+    const next = () => setActive((value) => (value + 1) % featured.length)
+    const prev = () => setActive((value) => (value - 1 + featured.length) % featured.length)
 
     return (
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#111] min-h-[620px] md:min-h-[700px] border border-black/10">
-            <div className="absolute inset-0 pointer-events-none" style={{ perspective: "1100px", perspectiveOrigin: "50% 52%" }}>
-                <div className="absolute inset-0 overflow-hidden">
-                    {[featured, [...featured].reverse()].map((rail, railIndex) => (
-                        <div key={railIndex} className={railIndex === 0 ? "brand-work-rail brand-work-rail-right" : "brand-work-rail brand-work-rail-left"}>
-                            {rail.map((client, index) => (
-                                <button
-                                    key={`${railIndex}-${client.id}-${index}`}
-                                    type="button"
-                                    onClick={() => setActive(railIndex === 0 ? index : (featured.length - 1 - index + featured.length) % featured.length)}
-                                    className="brand-work-card pointer-events-auto group"
-                                    style={{ animationDelay: `-${index * 2.1 + railIndex * 1.05}s` }}
-                                >
-                                    <img src={mediaUrl(client.thumbnail)} alt={client.title} draggable={false} />
-                                    <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/85 to-transparent text-left">
-                                        <span className="text-[8px] uppercase tracking-[.18em] text-white/70">{client.category}</span>
-                                        <span className="block text-xs font-bold text-white">{client.title}</span>
-                                    </div>
-                                </button>
-                            ))}
-                        </div>
-                    ))}
-                </div>
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#101010] min-h-[650px] md:min-h-[720px] border border-black/10">
+            <div className="absolute inset-x-0 top-0 z-30 flex justify-between items-center p-6 md:p-8 pointer-events-none">
+                <span className="text-[9px] uppercase tracking-[.22em] font-bold text-white/50">Brand work</span>
+                <span className="text-[9px] uppercase tracking-[.22em] font-bold text-white/40">{String(active + 1).padStart(2, "0")} / {String(featured.length).padStart(2, "0")}</span>
             </div>
 
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(17,17,17,.12)_42%,rgba(17,17,17,.78)_100%)] pointer-events-none" />
+            <div className="absolute inset-0 flex items-center justify-center overflow-hidden" style={{ perspective: "1200px" }}>
+                {featured.map((client, index) => {
+                    const position = relativePosition(index, active, featured.length)
+                    const visible = Math.abs(position) <= 3
+                    const isActive = position === 0
 
-            <div className="absolute inset-0 z-20 flex items-center justify-center px-5 md:px-10 pointer-events-none">
-                <motion.div key={activeClient.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .4 }} className="w-full max-w-[470px] text-center pointer-events-auto">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 px-4 py-2 mb-5">
+                    return (
+                        <motion.button
+                            key={client.id}
+                            type="button"
+                            onClick={() => setActive(index)}
+                            initial={false}
+                            animate={{
+                                x: position * 225,
+                                scale: isActive ? 1 : Math.max(0.52, 0.82 - Math.abs(position) * 0.09),
+                                rotateY: position * -10,
+                                opacity: visible ? (isActive ? 1 : Math.max(0.18, 0.58 - Math.abs(position) * 0.12)) : 0,
+                            }}
+                            transition={{ type: "spring", stiffness: 150, damping: 22, mass: 0.8 }}
+                            className={cn(
+                                "absolute w-[230px] md:w-[270px] aspect-[4/5] rounded-[22px] overflow-hidden bg-[#222] shadow-2xl",
+                                isActive ? "ring-2 ring-white/20" : "cursor-pointer"
+                            )}
+                            style={{ transformStyle: "preserve-3d", zIndex: 20 - Math.abs(position) }}
+                            aria-label={`Select ${client.title}`}
+                        >
+                            <img src={mediaUrl(client.thumbnail)} alt={client.title} className="absolute inset-0 h-full w-full object-cover" draggable={false} />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/10" />
+                            <div className="absolute inset-x-0 bottom-0 p-5 text-left">
+                                <span className="text-[8px] uppercase tracking-[.18em] font-bold text-white/65">{sectors[client.sector]?.label || client.sector}</span>
+                                <span className="block mt-1 text-lg font-heading font-extrabold text-white">{client.title}</span>
+                            </div>
+                        </motion.button>
+                    )
+                })}
+            </div>
+
+            <div className="absolute inset-x-0 bottom-8 z-40 flex flex-col items-center">
+                <motion.div
+                    key={activeClient.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: .35 }}
+                    className="text-center max-w-[460px] px-6"
+                >
+                    <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 px-4 py-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-[9px] uppercase tracking-[.22em] font-bold text-white/80">{sectors[activeClient.sector]?.label || activeClient.sector}</span>
+                        <span className="text-[9px] uppercase tracking-[.22em] font-bold text-white/75">{activeClient.category}</span>
                     </div>
-                    <h3 className="font-heading text-4xl md:text-6xl font-extrabold tracking-[-.045em] text-white leading-[.92]">{activeClient.title}</h3>
-                    <p className="mt-5 text-sm md:text-base leading-relaxed text-white/65 max-w-md mx-auto">{activeClient.description}</p>
-                    <div className="mt-7 flex items-center justify-center gap-3">
-                        <button onClick={prev} aria-label="Previous brand" className="w-11 h-11 rounded-full border border-white/20 bg-black/20 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"><ChevronLeft className="w-4 h-4" /></button>
-                        <button onClick={() => onSelect(activeClient)} className="h-11 rounded-full bg-white text-black px-6 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-primary hover:text-white transition-colors">View project <ArrowUpRight className="inline-block ml-2 w-3.5 h-3.5" /></button>
-                        <button onClick={next} aria-label="Next brand" className="w-11 h-11 rounded-full border border-white/20 bg-black/20 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"><ChevronRight className="w-4 h-4" /></button>
-                    </div>
+                    <p className="mt-3 text-sm text-white/55">{activeClient.description}</p>
+                    <button onClick={() => onSelect(activeClient)} className="mt-4 h-10 rounded-full bg-white text-black px-5 text-[9px] font-bold uppercase tracking-[.18em] hover:bg-primary hover:text-white transition-colors">
+                        View project <ArrowUpRight className="inline-block ml-2 w-3.5 h-3.5" />
+                    </button>
                 </motion.div>
-            </div>
 
-            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5">
-                {featured.map((client, index) => (
-                    <button key={client.id} onClick={() => setActive(index)} aria-label={`Select ${client.title}`} className={cn("h-1 rounded-full transition-all duration-300", index === active ? "w-8 bg-primary" : "w-2 bg-white/30 hover:bg-white/60")} />
-                ))}
+                <div className="mt-6 flex items-center gap-3">
+                    <button onClick={prev} aria-label="Previous brand" className="w-10 h-10 rounded-full border border-white/15 bg-white/5 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"><ChevronLeft className="w-4 h-4" /></button>
+                    <div className="flex gap-1.5">
+                        {featured.map((client, index) => (
+                            <button key={client.id} onClick={() => setActive(index)} aria-label={`Select ${client.title}`} className={cn("h-1 rounded-full transition-all", index === active ? "w-7 bg-primary" : "w-1.5 bg-white/25 hover:bg-white/50")} />
+                        ))}
+                    </div>
+                    <button onClick={next} aria-label="Next brand" className="w-10 h-10 rounded-full border border-white/15 bg-white/5 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"><ChevronRight className="w-4 h-4" /></button>
+                </div>
             </div>
         </div>
     )
