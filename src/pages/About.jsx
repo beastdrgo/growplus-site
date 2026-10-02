@@ -215,7 +215,7 @@ export default function About() {
                 <p className="text-lg text-gp-grey mb-12 max-w-xl mx-auto">
                     Experience the quiet luxury of intelligent growth. Let's build your future architecture today.
                 </p>
-                <a href="https://wa.me/919686965553" target="_blank" rel="noopener noreferrer" className="bg-gp-black text-white px-10 py-5 rounded-full font-heading font-bold uppercase tracking-widest text-xs hover:bg-primary transition-all">
+                <a href="https://wa.me/919686975553" target="_blank" rel="noopener noreferrer" className="bg-gp-black text-white px-10 py-5 rounded-full font-heading font-bold uppercase tracking-widest text-xs hover:bg-primary transition-all">
                     Initiate Audit
                 </a>
             </section>
