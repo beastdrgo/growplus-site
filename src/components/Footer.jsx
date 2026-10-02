@@ -48,7 +48,7 @@ export default function Footer() {
                         <h4 className="font-heading text-[0.65rem] font-bold tracking-[0.25em] uppercase text-gp-black mb-6">Connect</h4>
                         <div className="flex flex-col gap-3">
                             <a href="https://instagram.com/growplus" target="_blank" rel="noopener noreferrer" className="font-heading text-[0.7rem] font-bold tracking-[0.1em] text-gp-grey hover:text-primary transition-colors">Instagram</a>
-                            <a href="https://wa.me/919901542387" target="_blank" rel="noopener noreferrer" className="font-heading text-[0.7rem] font-bold tracking-[0.1em] text-gp-grey hover:text-primary transition-colors">WhatsApp Audit</a>
+                            <a href="https://wa.me/919686965553" target="_blank" rel="noopener noreferrer" className="font-heading text-[0.7rem] font-bold tracking-[0.1em] text-gp-grey hover:text-primary transition-colors">WhatsApp Audit</a>
                         </div>
                     </div>
                 </div>
