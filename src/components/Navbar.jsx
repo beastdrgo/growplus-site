@@ -11,7 +11,7 @@ export default function Navbar() {
     const { pathname } = useLocation()
 
     // WHATSAPP NUMBER
-    const WHATSAPP_URL = "https://wa.me/919901542387"
+    const WHATSAPP_URL = "https://wa.me/919686965553"
 
     useEffect(() => {
         const handleScroll = () => {
