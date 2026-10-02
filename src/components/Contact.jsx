@@ -4,7 +4,7 @@ import { GlassCard, GlassCardContent, GlassCardDescription, GlassCardHeader, Gla
 
 export default function Contact() {
     const [selectedSector, setSelectedSector] = useState("")
-    const WHATSAPP_URL = "https://wa.me/919686965553"
+    const WHATSAPP_URL = "https://wa.me/919686975553"
 
     const doForm = (e) => {
         e.preventDefault()
@@ -19,7 +19,7 @@ export default function Contact() {
         const industryMap = { fb: "Food & Beverage", re: "Real Estate", je: "Jewellery", ot: "Other" }
         const industryLabel = industry ? industryMap[industry] : "Not specified"
         const waText = `*New Lead from Growplus Website!*\n\n*Name:* ${name}\n*Phone:* ${phone || "Not provided"}\n*Email:* ${email}\n*Industry:* ${industryLabel}\n\n*Message:*\n${message || "No specific message."}`
-        const waLink = `https://wa.me/919686965553?text=${encodeURIComponent(waText)}`
+        const waLink = `https://wa.me/919686975553?text=${encodeURIComponent(waText)}`
 
         window.open(waLink, "_blank")
 
