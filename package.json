@@ -16,9 +16,27 @@
     "source": "dist",
     "include": [
       "/",
+      "/about",
+      "/reviews",
       "/food-and-beverage-marketing",
       "/real-estate-marketing",
-      "/jewellery-branding"
+      "/jewellery-branding",
+      "/students",
+      "/digital-marketing-agency-bangalore",
+      "/website-development-company-bangalore",
+      "/social-media-marketing-bangalore",
+      "/ai-creative-agency-bangalore",
+      "/ai-video-production-bangalore",
+      "/digital-marketing-agency-mangalore",
+      "/website-development-company-mangalore",
+      "/social-media-marketing-mangalore",
+      "/ai-creative-agency-mangalore",
+      "/ai-video-production-mangalore",
+      "/digital-marketing-agency-puttur",
+      "/website-development-company-puttur",
+      "/social-media-marketing-puttur",
+      "/ai-creative-agency-puttur",
+      "/ai-video-production-puttur"
     ]
   },
   "dependencies": {
@@ -38,10 +56,10 @@
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.18",
-    "postcss": "^8.4.35",
     "react-snap": "^1.23.0",
     "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
     "vite": "^5.1.4"
   }
 }
