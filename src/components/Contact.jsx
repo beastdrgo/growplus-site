@@ -80,7 +80,7 @@ export default function Contact() {
                     </div>
                     <div>
                         <span className="font-heading text-[0.64rem] font-bold tracking-[0.28em] uppercase text-primary mb-2 block">Location</span>
-                        <div className="text-[0.95rem] text-white font-body">Mangalore, Karnataka, India</div>
+                        <div className="text-[0.95rem] text-white font-body">Bangalore · Mangalore · Puttur</div>
                     </div>
                 </div>
             </div>

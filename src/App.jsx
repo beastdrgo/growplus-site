@@ -10,7 +10,6 @@ import Reviews from "@/pages/Reviews"
 import FoodBeverage from "@/pages/FoodBeverage"
 import RealEstate from "@/pages/RealEstate"
 import Jewellery from "@/pages/Jewellery"
-import Students from "@/pages/Students"
 import LocalService from "@/pages/LocalService"
 
 const localRoutes = [
@@ -48,7 +47,6 @@ export default function App() {
                 <Route path="/food-and-beverage-marketing" element={<FoodBeverage />} />
                 <Route path="/real-estate-marketing" element={<RealEstate />} />
                 <Route path="/jewellery-branding" element={<Jewellery />} />
-                <Route path="/students" element={<Students />} />
                 {localRoutes.map(([serviceSlug, citySlug]) => (
                     <Route
                         key={`${serviceSlug}-${citySlug}`}
