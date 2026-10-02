@@ -104,7 +104,7 @@ export default function LocalService({ citySlug, serviceSlug }) {
             "@type": "Organization",
             name: "GrowPlus",
             url: "https://growplus.site/",
-            telephone: "+919901542387",
+            telephone: "+919686965553",
         },
         areaServed: {
             "@type": "City",
@@ -152,7 +152,7 @@ export default function LocalService({ citySlug, serviceSlug }) {
                         {copy.description}
                     </p>
                     <div className="mt-10 flex flex-wrap gap-4">
-                        <a href="https://wa.me/919901542387" target="_blank" rel="noopener noreferrer" className="bg-gp-black text-white px-7 py-4 font-heading text-xs font-bold tracking-[0.16em] uppercase hover:bg-primary transition-colors">
+                        <a href="https://wa.me/919686965553" target="_blank" rel="noopener noreferrer" className="bg-gp-black text-white px-7 py-4 font-heading text-xs font-bold tracking-[0.16em] uppercase hover:bg-primary transition-colors">
                             Discuss Your Project
                         </a>
                         <Link to="/#work" className="px-7 py-4 border border-border2 font-heading text-xs font-bold tracking-[0.16em] uppercase hover:border-gp-black transition-colors">
@@ -217,7 +217,7 @@ export default function LocalService({ citySlug, serviceSlug }) {
                     <p className="mt-6 text-white/70 text-lg">
                         Tell us what you are trying to achieve and we can map the right combination of strategy, creative, website, and AI services.
                     </p>
-                    <a href="https://wa.me/919901542387" target="_blank" rel="noopener noreferrer" className="inline-flex mt-9 bg-primary text-white px-8 py-4 font-heading text-xs font-bold tracking-[0.16em] uppercase">
+                    <a href="https://wa.me/919686965553" target="_blank" rel="noopener noreferrer" className="inline-flex mt-9 bg-primary text-white px-8 py-4 font-heading text-xs font-bold tracking-[0.16em] uppercase">
                         Start a Conversation
                     </a>
                 </div>
