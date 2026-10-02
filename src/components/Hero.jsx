@@ -38,7 +38,7 @@ export default function Hero() {
                                 <p className="text-[.62rem] uppercase tracking-[.22em] font-bold text-white/60 mb-2">GrowPlus</p>
                                 <p className="font-heading text-2xl font-extrabold">Creative built for growth.</p>
                             </div>
-                            <a href="https://wa.me/919686965553" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white text-gp-black flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://wa.me/919686975553" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white text-gp-black flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                                 <ArrowUpRight className="w-5 h-5" />
                             </a>
                         </div>
