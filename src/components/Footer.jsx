@@ -2,12 +2,12 @@ import { mediaUrl } from "@/utils/media"
 
 export default function Footer() {
     return (
-        <footer className="bg-gp-bg border-t border-border2 py-12 md:py-16">
-            <div className="container px-6 mx-auto max-w-7xl">
+        <footer className="relative overflow-hidden bg-gp-bg border-t border-border2 py-16 md:py-24 arc-texture">
+            <div className="container relative z-10 px-6 mx-auto max-w-7xl">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
                     <div className="col-span-1 md:col-span-1">
-                        <div className="flex items-center gap-2 mb-6">
-                            <img src={mediaUrl("/logo.jpg")} alt="Growplus" className="h-[30px] w-auto object-contain rounded-full shadow-sm" />
+                        <div className="flex items-center gap-3 mb-6">
+                            <img src={mediaUrl("/logo.jpg")} alt="Growplus" className="h-8 w-auto object-contain rounded-full shadow-sm" />
                             <span className="font-heading text-xl font-bold text-gp-black tracking-wide">GROW<span className="text-primary">+</span></span>
                         </div>
                         <p className="text-[0.8rem] text-gp-grey leading-relaxed max-w-xs">
