@@ -37,8 +37,8 @@ export default function Navbar() {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "circOut" }}
-                    className={`w-full px-6 py-6 md:px-16 md:py-6 transition-all duration-400 flex items-center justify-between ${isScrolled || isMobileMenuOpen
-                        ? "bg-white/95 backdrop-blur-xl border-b border-black/10 shadow-sm md:py-4"
+                    className={`mx-auto w-full max-w-[1480px] px-4 py-3 md:px-8 md:py-4 transition-all duration-400 flex items-center justify-between ${isScrolled || isMobileMenuOpen
+                        ? "bg-white/88 backdrop-blur-2xl border border-black/10 shadow-[0_10px_35px_rgba(13,13,13,.06)] md:mt-3 md:rounded-full md:py-3"
                         : "bg-transparent"
                         }`}
                 >
@@ -51,12 +51,12 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden items-center gap-10 md:flex">
+                    <div className="hidden items-center gap-1 rounded-full border border-black/10 bg-white/55 p-1 backdrop-blur-xl md:flex">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 to={link.href}
-                                className={`text-xs font-semibold tracking-[0.14em] uppercase transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:bg-primary after:transition-all hover:after:w-full ${pathname === link.href ? "text-primary after:w-full" : "text-gp-grey hover:text-gp-black after:w-0"}`}
+                                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-[0.12em] uppercase transition-all ${pathname === link.href ? "bg-white text-primary shadow-sm" : "text-gp-grey hover:bg-white/70 hover:text-gp-black"}`}
                             >
                                 {link.name}
                             </Link>
@@ -65,7 +65,7 @@ export default function Navbar() {
                             href={WHATSAPP_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs font-semibold tracking-[0.14em] uppercase text-white bg-gp-black hover:bg-primary transition-colors px-6 py-3"
+                            className="ml-1 rounded-full bg-gp-black px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-px hover:bg-primary"
                         >
                             Contact
                         </a>
