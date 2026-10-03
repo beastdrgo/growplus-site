@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link, useLocation } from "react-router-dom"
-import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { mediaUrl } from "@/utils/media"
 
@@ -68,7 +67,7 @@ export default function Navbar() {
                             className="ml-1 rounded-full bg-gp-black px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-px hover:bg-primary"
                         >
                             Contact
-                        </a></Magnetic>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Toggle */}
@@ -117,4 +116,3 @@ export default function Navbar() {
         </>
     )
 }
-
