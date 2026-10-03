@@ -29,7 +29,7 @@ function VideoCard({ content, isPlaying, onPlay, onPause }) {
             </div>
 
             <div
-                className="relative aspect-[9/16] bg-gp-bg3 rounded-none overflow-hidden group border border-border2 cursor-pointer transition-all hover:border-gp-black"
+                className="relative aspect-[9/16] bg-gp-bg3 rounded-[1.35rem] overflow-hidden group border border-border2 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(13,13,13,.12)] hover:border-primary/40"
                 onClick={togglePlay}
             >
                 {!isPlaying && (
@@ -77,7 +77,7 @@ function PosterCard({ content }) {
                 </div>
 
                 <div
-                    className="relative bg-gp-bg3 rounded-none overflow-hidden group border border-border2 cursor-pointer hover:border-gp-black transition-colors"
+                    className="relative bg-gp-bg3 rounded-[1.35rem] overflow-hidden group border border-border2 cursor-pointer hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(13,13,13,.12)]"
                     onClick={() => setIsExpanded(true)}
                 >
                     <img
@@ -146,7 +146,7 @@ export default function ClientWork({ client, isOpen, onClose }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-50 flex items-center justify-center bg-gp-black/60 backdrop-blur-sm p-4 md:p-8"
+                className="fixed inset-0 z-50 flex items-center justify-center bg-gp-black/70 backdrop-blur-xl p-4 md:p-8"
                 onClick={onClose}
             >
                 <motion.div
@@ -154,7 +154,7 @@ export default function ClientWork({ client, isOpen, onClose }) {
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     exit={{ scale: 0.98, opacity: 0, y: 20 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-gp-bg border border-border2 shadow-2xl overscroll-contain touch-pan-y"
+                    className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-gp-bg/95 backdrop-blur-2xl border border-white/60 rounded-[2rem] shadow-[0_40px_120px_rgba(0,0,0,.28)] overscroll-contain touch-pan-y"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Close Button */}
@@ -166,7 +166,7 @@ export default function ClientWork({ client, isOpen, onClose }) {
                     </button>
 
                     {/* Header */}
-                    <div className="p-8 md:p-14 border-b border-border2 bg-gp-bg2">
+                    <div className="p-8 md:p-14 border-b border-border2 bg-gp-bg2/75 arc-texture">
                         <div className="flex items-center gap-3 mb-5">
                             <span className="font-heading text-[0.66rem] font-bold tracking-[0.2em] uppercase text-gp-black">
                                 {sectors[client.sector]?.label || client.sector}
@@ -182,7 +182,7 @@ export default function ClientWork({ client, isOpen, onClose }) {
                     </div>
 
                     {/* Content Gallery */}
-                    <div className="p-8 md:p-14 bg-gp-bg">
+                    <div className="p-8 md:p-14 bg-gp-bg/80">
                         <div className="flex items-center justify-between mb-8">
                             <h3 className="font-heading text-2xl font-extrabold text-gp-black tracking-tight">Content Gallery</h3>
                             <span className="font-heading text-[0.7rem] font-bold uppercase tracking-[0.15em] text-gp-grey">{client.content?.length || 0} items</span>
