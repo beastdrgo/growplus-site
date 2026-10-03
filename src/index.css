@@ -324,3 +324,28 @@ body {
   .arc-marquee-control { display: none; }
 }
 @keyframes arcMarquee { to { transform: translateX(-50%); } }
+
+
+/* Premium micro-interaction layer */
+@media (pointer: fine) {
+  .arc-spotlight { --mx: 50%; --my: 50%; }
+  .arc-spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    border: 1px solid rgba(92,184,50,0);
+    transition: border-color .4s var(--arc-ease-standard);
+  }
+  .arc-spotlight:hover::after { border-color: rgba(92,184,50,.18); }
+}
+.arc-focus-ring:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+  }
+}
