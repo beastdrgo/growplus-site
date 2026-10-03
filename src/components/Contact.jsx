@@ -47,6 +47,7 @@ export default function Contact() {
             <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
 
+            <SectionRule label="Start a conversation" />
             <div className="relative z-10 container mx-auto grid max-w-[1440px] grid-cols-1 gap-10 px-6 md:px-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
                 <div className="flex flex-col justify-center py-6 lg:py-12">
                     <span className="gp-eyebrow">Get in touch</span>
@@ -95,9 +96,9 @@ export default function Contact() {
                             <div><label className={labelClass}>Message</label><textarea name="message" className={inputClass + " min-h-[120px] resize-y"} placeholder="Tell us about your project..." /></div>
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <p className="text-xs leading-relaxed text-gp-grey">Your details go directly to our WhatsApp for a quick response.</p>
-                                <button type="submit" className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-gp-black px-7 py-3.5 font-heading text-[.68rem] font-bold uppercase tracking-[.16em] text-white transition-all hover:bg-primary">
+                                <Magnetic strength={0.08}><button type="submit" className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-gp-black px-7 py-3.5 font-heading text-[.68rem] font-bold uppercase tracking-[.16em] text-white transition-all hover:bg-primary">
                                     Send Message <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                                </button>
+                                </button></Magnetic>
                             </div>
                             <div id="fsuc" className="hidden rounded-xl border border-primary/30 bg-primary/10 p-3.5 text-center text-sm text-gp-black">✓ Message sent! We'll be in touch within 24 hours.</div>
                         </form>
