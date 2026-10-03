@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import InView from "@/components/arc/InView"
 import { Helmet } from "react-helmet-async"
 
 const team = [
@@ -145,7 +146,7 @@ export default function About() {
             </section>
 
             {/* Methodology */}
-            <section className="py-24 md:py-32 px-8 md:px-20 container mx-auto">
+            <section className="py-28 md:py-36 px-8 md:px-20 container mx-auto arc-texture">
                 <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -191,7 +192,7 @@ export default function About() {
                                 transition={{ delay: idx * 0.1 }}
                                 className="group cursor-pointer"
                             >
-                                <div className="aspect-[4/5] overflow-hidden rounded-xl mb-6 bg-gp-bg">
+                                <div className="aspect-[4/5] overflow-hidden rounded-[1.75rem] mb-6 bg-gp-bg border border-border2 shadow-[0_18px_55px_rgba(13,13,13,.06)]">
                                     <img
                                         src={t.image}
                                         alt={t.name}
@@ -208,7 +209,7 @@ export default function About() {
             </section>
 
             {/* CTA */}
-            <section className="py-32 px-8 md:px-20 text-center container mx-auto">
+            <section className="py-36 px-8 md:px-20 text-center container mx-auto">
                 <h2 className="text-5xl md:text-7xl font-bold font-heading mb-12 tracking-tighter">
                     Ready to <span className="text-primary italic">evolve?</span>
                 </h2>
