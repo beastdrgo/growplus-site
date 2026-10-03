@@ -7,8 +7,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                heading: ['Syne', 'sans-serif'],
-                body: ['DM Sans', 'sans-serif'],
+                heading: ['Geist', 'Syne', 'sans-serif'],
+                body: ['Inter', 'DM Sans', 'sans-serif'],
             },
             colors: {
                 background: '#f7f4ef',
