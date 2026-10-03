@@ -43,11 +43,11 @@ export default function Contact() {
     const labelClass = "mb-2 block text-[.62rem] font-heading font-bold uppercase tracking-[.2em] text-gp-grey"
 
     return (
-        <section id="contact" className="relative overflow-hidden bg-gp-bg2 py-20 md:py-28">
+        <section id="contact" className="relative overflow-hidden bg-gp-bg2 py-24 md:py-32 arc-texture arc-grain">
             <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
 
-            <div className="relative container mx-auto grid max-w-[1440px] grid-cols-1 gap-10 px-6 md:px-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+            <div className="relative z-10 container mx-auto grid max-w-[1440px] grid-cols-1 gap-10 px-6 md:px-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
                 <div className="flex flex-col justify-center py-6 lg:py-12">
                     <span className="gp-eyebrow">Get in touch</span>
                     <h2 className="font-heading text-5xl font-extrabold leading-[.94] tracking-[-.05em] text-gp-black md:text-7xl">
@@ -60,7 +60,7 @@ export default function Contact() {
                     <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
                         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4">
                             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gp-black text-white transition-colors group-hover:bg-primary"><MessageCircle className="h-4 w-4" /></span>
-                            <span><span className="block text-[.6rem] font-bold uppercase tracking-[.2em] text-gp-grey">WhatsApp</span><span className="mt-1 block font-heading font-bold text-gp-black">+91 99015 42387</span></span>
+                            <span><span className="block text-[.6rem] font-bold uppercase tracking-[.2em] text-gp-grey">WhatsApp</span><span className="mt-1 block font-heading font-bold text-gp-black">+91 96869 75553</span></span>
                         </a>
                         <a href="mailto:connect@growplus.site" className="group flex items-center gap-4">
                             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gp-black text-white transition-colors group-hover:bg-primary"><Mail className="h-4 w-4" /></span>
@@ -70,7 +70,7 @@ export default function Contact() {
                     <p className="mt-10 text-[.62rem] font-heading font-bold uppercase tracking-[.2em] text-gp-grey">Bangalore · Mangalore · Puttur</p>
                 </div>
 
-                <GlassCard className="relative">
+                <GlassCard className="relative rounded-[2rem] border-black/10 bg-white/65 shadow-[0_24px_70px_rgba(13,13,13,.08)] backdrop-blur-2xl">
                     <GlassCardHeader>
                         <GlassCardTitle>Send a Message</GlassCardTitle>
                         <GlassCardDescription>Share the basics and we’ll get back to you with the next step.</GlassCardDescription>
@@ -78,7 +78,7 @@ export default function Contact() {
                     <GlassCardContent>
                         <form className="flex flex-col gap-5" onSubmit={doForm}>
                             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                <div><label className={labelClass}>Your Name</label><input type="text" name="name" className={inputClass} placeholder="Enter your name" required /></div>
+                                <div><label className={labelClass}>Your Name</label><input type="text" name="name" className={inputClass + " focus:-translate-y-px"} placeholder="Enter your name" required /></div>
                                 <div><label className={labelClass}>Phone</label><input type="tel" name="phone" className={inputClass} placeholder="+91 00000 00000" /></div>
                             </div>
                             <div><label className={labelClass}>Email</label><input type="email" name="email" className={inputClass} placeholder="your@email.com" required /></div>
