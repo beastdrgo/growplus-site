@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import InView from "@/components/arc/InView"
+import TextReveal from "@/components/arc/TextReveal"
 import { Helmet } from "react-helmet-async"
 
 const team = [
@@ -57,15 +58,7 @@ export default function About() {
                     Since 2022
                 </motion.div>
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="font-heading text-5xl md:text-[5.5rem] font-bold leading-[1] tracking-tight mb-12 max-w-4xl"
-                >
-                    The Future of Growth, <span className="text-primary italic">Automated.</span>
-                </motion.h1>
+                <TextReveal as="h1" className="font-heading text-5xl md:text-[5.5rem] font-bold leading-[.92] tracking-[-.055em] mb-12 max-w-5xl">The Future of Growth, Automated.</TextReveal>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -79,7 +72,7 @@ export default function About() {
             </section>
 
             {/* Vision Section */}
-            <section className="py-24 md:py-32 bg-gp-black text-white px-8 md:px-20 overflow-hidden">
+            <section className="relative py-28 md:py-36 bg-gp-black text-white px-8 md:px-20 overflow-hidden arc-grain">
                 <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <span className="font-heading text-[0.66rem] font-bold tracking-[0.3em] uppercase text-primary mb-6 flex items-center gap-2.5 before:content-[''] before:w-5 before:h-[1.5px] before:bg-primary">
@@ -190,7 +183,7 @@ export default function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group cursor-pointer"
+                                className="group cursor-pointer arc-spotlight rounded-[1.75rem] p-3 -m-3 transition-all duration-500 hover:bg-white/50"
                             >
                                 <div className="aspect-[4/5] overflow-hidden rounded-[1.75rem] mb-6 bg-gp-bg border border-border2 shadow-[0_18px_55px_rgba(13,13,13,.06)]">
                                     <img
