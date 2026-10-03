@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Helmet } from "react-helmet-async"
 import { Star, ShieldCheck, Globe, Zap } from "lucide-react"
+import InView from "@/components/arc/InView"
 
 const reviews = [
     {
@@ -44,7 +45,7 @@ export default function Reviews() {
             </Helmet>
 
             {/* Hero */}
-            <section className="pt-40 md:pt-48 pb-20 md:pb-32 px-8 md:px-20 container mx-auto text-center overflow-hidden">
+            <section className="relative pt-40 md:pt-48 pb-24 md:pb-36 px-8 md:px-20 container mx-auto text-center overflow-hidden arc-texture">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -76,7 +77,7 @@ export default function Reviews() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="p-8 bg-white border border-border2 rounded-2xl flex flex-col items-center justify-center group hover:border-primary transition-all duration-500"
+                            className="arc-spotlight p-8 bg-white/70 backdrop-blur-xl border border-border2 rounded-[1.75rem] flex flex-col items-center justify-center group transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_55px_rgba(13,13,13,.07)]"
                         >
                             <div className={`p-4 rounded-full bg-gp-bg text-primary mb-6 transition-transform group-hover:scale-110`}>
                                 {s.icon}
@@ -98,7 +99,7 @@ export default function Reviews() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="bg-white p-12 md:p-16 rounded-[2rem] border border-transparent hover:border-primary/20 transition-all duration-700 shadow-[0_4px_30px_rgba(0,0,0,0.02)] relative group"
+                            className="arc-spotlight bg-white/75 backdrop-blur-xl p-12 md:p-16 rounded-[2rem] border border-border2 hover:border-primary/20 transition-all duration-700 shadow-[0_4px_30px_rgba(0,0,0,0.04)] relative group"
                         >
                             <div className="absolute top-12 right-12 opacity-[0.03] text-primary group-hover:opacity-10 transition-opacity">
                                 <Star className="w-20 h-20 fill-current" />
