@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Helmet } from "react-helmet-async"
 import { Star, ShieldCheck, Globe, Zap } from "lucide-react"
 import InView from "@/components/arc/InView"
+import TextReveal from "@/components/arc/TextReveal"
 
 const reviews = [
     {
@@ -54,15 +55,7 @@ export default function Reviews() {
                     Elite Performance
                 </motion.div>
 
-                <motion.h1
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                    className="font-heading text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-gp-black mb-12"
-                >
-                    Proven <span className="text-primary italic">Success.</span><br />
-                    Sophisticated <span style={{ WebkitTextStroke: '1px var(--black)', color: 'transparent' }}>Scale.</span>
-                </motion.h1>
+                <TextReveal as="h1" className="mx-auto max-w-6xl font-heading text-5xl md:text-8xl font-bold tracking-[-.06em] leading-[.88] text-gp-black mb-12">Proven Success. Sophisticated Scale.</TextReveal>
 
                 <p className="text-lg md:text-xl text-gp-grey leading-relaxed max-w-2xl mx-auto mb-16 px-4">
                     Explore testimonials from our elite collective of clients who have integrated artificial intelligence into their core DNA for exponential growth.
@@ -90,7 +83,7 @@ export default function Reviews() {
             </section>
 
             {/* Testimonials Grid Section */}
-            <section className="py-24 md:py-32 px-8 md:px-20 bg-gp-bg2 border-y border-border2">
+            <section className="py-28 md:py-36 px-8 md:px-20 bg-gp-bg2 border-y border-border2 arc-texture">
                 <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {reviews.map((r, idx) => (
                         <motion.div
@@ -126,7 +119,7 @@ export default function Reviews() {
 
 
             {/* Map Placeholder / Future Strategy */}
-            <section className="py-32 bg-gp-black text-white px-8 md:px-20 relative overflow-hidden">
+            <section className="py-36 bg-gp-black text-white px-8 md:px-20 relative overflow-hidden arc-grain">
                 <div className="container mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <div className="max-w-xl">
@@ -167,7 +160,7 @@ export default function Reviews() {
             </section>
 
             {/* Glowing CTA Footer */}
-            <section className="py-40 bg-gp-bg text-center relative px-8 overflow-hidden">
+            <section className="py-40 bg-gp-bg text-center relative px-8 overflow-hidden arc-texture">
                 <motion.div
                     initial={{ scale: 0.9, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
