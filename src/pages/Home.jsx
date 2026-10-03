@@ -3,6 +3,7 @@ import Projects from "@/components/Projects"
 import Services from "@/components/Services"
 import Process from "@/components/Process"
 import Contact from "@/components/Contact"
+import CapabilitiesMarquee from "@/components/CapabilitiesMarquee"
 import { Helmet } from "react-helmet-async"
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
@@ -29,6 +30,7 @@ export default function Home() {
             </Helmet>
             <Hero />
             <Projects />
+            <CapabilitiesMarquee />
             <Services />
             <Process />
             <Contact />
