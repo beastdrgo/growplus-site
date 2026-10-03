@@ -68,7 +68,7 @@ export default function Navbar() {
                             className="ml-1 rounded-full bg-gp-black px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-px hover:bg-primary"
                         >
                             Contact
-                        </a>
+                        </a></Magnetic>
                     </div>
 
                     {/* Mobile Menu Toggle */}
